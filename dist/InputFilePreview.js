@@ -155,3 +155,4 @@ export default class InputFilePreview extends HTMLInputElement {
     }
 }
 _targetElement = new WeakMap(), _maxSize = new WeakMap(), _errorMessageHTML = new WeakMap();
+//# sourceMappingURL=InputFilePreview.js.map

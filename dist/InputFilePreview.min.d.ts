@@ -32,4 +32,4 @@ export default class InputFilePreview extends HTMLInputElement {
      */
     private _escapeHtml;
 }
-//# sourceMappingURL=InputFilePreview.esm.d.ts.map
+//# sourceMappingURL=InputFilePreview.d.ts.map

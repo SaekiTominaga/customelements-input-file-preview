@@ -2,7 +2,36 @@
 	"name": "@saekitominaga/customelements-input-file-preview",
 	"version": "1.0.1",
 	"description": "Show preview with `<input type=file>` by Custom Elements.",
+	"keywords": [
+		"web-components",
+		"custom-elements",
+		"file"
+	],
+	"homepage": "https://github.com/SaekiTominaga/customelements-input-file-preview#readme",
+	"bugs": {
+		"url": "https://github.com/SaekiTominaga/customelements-input-file-preview/issues"
+	},
+	"license": "MIT",
+	"author": "Saeki Tominaga",
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
+	"browser": "dist/InputFilePreview.js",
+	"types": "dist/InputFilePreview.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SaekiTominaga/customelements-input-file-preview.git"
+	},
+	"scripts": {
+		"_build:tsc": "tsc -w",
+		"_build:compress": "onchange -f add -f change -v dist/InputFilePreview.js -- brotlin compress dist/InputFilePreview.js -m 1",
+		"_build:minify": "onchange -f add -f change -v dist/InputFilePreview.js -- terser dist/InputFilePreview.js -o dist/InputFilePreview.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/InputFilePreview.js.map',filename='InputFilePreview.js',includeSources,url='InputFilePreview.min.js.map'",
+		"_build:minify-compress": "onchange -f add -f change -v dist/InputFilePreview.min.js -- brotlin compress dist/InputFilePreview.min.js -m 1",
+		"_build:minify-declaration": "onchange -f add -f change -v dist/InputFilePreview.d.ts -- cpy dist/InputFilePreview.d.ts dist --rename=InputFilePreview.min.d.ts",
+		"build": "run-p _build:*"
+	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.10.0",
 		"@typescript-eslint/parser": "^4.10.0",
@@ -16,31 +45,6 @@
 		"terser": "^5.5.1",
 		"typescript": "^4.1.3"
 	},
-	"main": "dist/InputFilePreview.esm.js",
-	"types": "dist/InputFilePreview.esm.d.ts",
-	"scripts": {
-		"_ts-watch:tsc": "tsc -w",
-		"_ts-watch:compress": "onchange -f add -f change -v dist/InputFilePreview.esm.js -- brotlin compress dist/InputFilePreview.esm.js -m 1",
-		"_ts-watch:minify": "onchange -f add -f change -v dist/InputFilePreview.esm.js -- terser dist/InputFilePreview.esm.js -o dist/InputFilePreview.min.esm.js -c ecma=2020 --mangle --ecma 2020 --module --source-map base=dist,filename=InputFilePreview.esm.js,includeSources",
-		"_ts-watch:compress-minify": "onchange -f add -f change -v dist/InputFilePreview.min.esm.js -- brotlin compress dist/InputFilePreview.min.esm.js -m 1",
-		"_ts-watch:dts-minify": "onchange -f add -f change -v dist/InputFilePreview.esm.d.ts -- cpy dist/InputFilePreview.esm.d.ts dist --rename=InputFilePreview.min.esm.d.ts",
-		"ts-watch": "run-p _ts-watch:*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/SaekiTominaga/customelements-input-file-preview.git"
-	},
-	"keywords": [
-		"web-components",
-		"custom-elements",
-		"file"
-	],
-	"author": "Saeki Tominaga",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/SaekiTominaga/customelements-input-file-preview/issues"
-	},
-	"homepage": "https://github.com/SaekiTominaga/customelements-input-file-preview#readme",
 	"publishConfig": {
 		"access": "public"
 	}
