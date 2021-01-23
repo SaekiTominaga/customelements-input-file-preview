@@ -10,7 +10,7 @@ Display image, audio, and video previews in `<input type=file>` by Custom Elemen
 
 ## Examples
 
-```
+```HTML
 <input type="file" is="x-file-preview"
   data-target-for="preview"
   data-error-message='&lt;strong class="error"&gt;&lt;b&gt;${name}&lt;/b&gt; (${size} byte) cannot be previewed.&lt;/strong&gt;'
