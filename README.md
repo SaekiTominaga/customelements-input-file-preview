@@ -22,13 +22,13 @@ Display image, audio, and video previews in `<input type=file>` by Custom Elemen
 ## Attributes
 
 <dl>
-<dt>type [optional]</dt>
+<dt><code>type</code> [optional]</dt>
 <dd>This function automatically sets <code>type="file"</code>.
 However, it is recommended to manually add <code>type="file"</code> for JavaScript disabled environments and browsers that do not <a href="https://caniuse.com/custom-elementsv1">support Customized built-in elements</a> (Safari 14, Edge Legacy, etc.). According to <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-type">the description in the HTML specification</a>, <q cite="https://html.spec.whatwg.org/multipage/input.html#attr-input-type">The missing value default and invalid value default are the <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">Text</a> state</q>.</dd>
-<dt>data-target-for [required]</dt>
+<dt><code>data-target-for</code> [required]</dt>
 <dd>ID of the element to display the preview. If the element is &lt;ol&gt;, &lt;ul&gt;, the &lt;li&gt; element will be inserted.</dd>
-<dt>data-error-message [required]</dt>
+<dt><code>data-error-message</code> [required]</dt>
 <dd>Error message when the file cannot be previewed. You can write HTML markup directly. ${name} in the string is converted to the file name, and ${size} is converted to the file size (in bytes).</dd>
-<dt>data-max-size [optional]</dt>
+<dt><code>data-max-size</code> [optional]</dt>
 <dd>The number of bytes of maximum file size to preview (Files larger than this will not be previewed, but will not result in an error). If not specified, the default value is 10 MiB.</dd>
 </dl>
