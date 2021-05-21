@@ -1,12 +1,10 @@
 /**
  * Show preview with file upload
- *
- * @version 1.0.0
  */
 export default class InputFilePreview extends HTMLInputElement {
 	#targetElement: HTMLElement | null = null; // プレビューを表示する要素
 	#maxSize = 10485760; // これ以上のサイズのファイルはプレビューを行わない
-	#errorMessageHTML: string | undefined; // エラーメッセージの HTML 断片
+	#errorMessageHTML!: string; // エラーメッセージの HTML 断片
 
 	constructor() {
 		super();
@@ -83,7 +81,7 @@ export default class InputFilePreview extends HTMLInputElement {
 
 			/* ファイルサイズ、 MIME タイプのチェック */
 			if (size > this.#maxSize || !['image', 'audio', 'video'].includes(type)) {
-				insertPreviewElement.insertAdjacentHTML('beforeend', this._convertMessage(<string>this.#errorMessageHTML, file));
+				insertPreviewElement.insertAdjacentHTML('beforeend', this._convertMessage(this.#errorMessageHTML, file));
 				continue;
 			}
 

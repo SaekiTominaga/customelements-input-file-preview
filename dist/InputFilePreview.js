@@ -14,8 +14,6 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _targetElement, _maxSize, _errorMessageHTML;
 /**
  * Show preview with file upload
- *
- * @version 1.0.0
  */
 export default class InputFilePreview extends HTMLInputElement {
     constructor() {
